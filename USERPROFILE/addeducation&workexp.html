@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Work Experience Forms</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css1/addeducation&workexp.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="education-tab" data-toggle="tab" href="#education" role="tab" aria-controls="education" aria-selected="true">Add Education</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="work-tab" data-toggle="tab" href="#work" role="tab" aria-controls="work" aria-selected="false">Add Work Experience</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+            <!-- Education Form -->
+            <div class="modal-dialog mt-4">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Education History</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="educationForm">
+                            <div class="form-group">
+                                <label for="school">School *</label>
+                                <input type="text" id="school" name="school" class="form-control" placeholder="Ex: Northwestern University" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="degree">Degree</label>
+                                <input type="text" id="degree" name="degree" class="form-control" placeholder="Ex: Bachelors">
+                            </div>
+                            <div class="form-group">
+                                <label for="fieldOfStudy">Field of Study</label>
+                                <input type="text" id="fieldOfStudy" name="fieldOfStudy" class="form-control" placeholder="Ex: Computer Science">
+                            </div>
+                            <div class="form-group">
+                                <label for="datesAttended">Dates Attended</label>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <input type="date" id="startDateEdu" name="startDateEdu" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="date" id="endDateEdu" name="endDateEdu" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descriptionEdu">Description</label>
+                                <textarea id="descriptionEdu" name="descriptionEdu" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bioEdu">Bio</label>
+                                <textarea id="bioEdu" name="bioEdu" class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="clearEducationForm()">Cancel</button>
+                        <button type="button" class="btn btn-success" onclick="saveEducation()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="work" role="tabpanel" aria-labelledby="work-tab">
+            <!-- Work Experience Form -->
+            <div class="modal-dialog mt-4">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Work Experience</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="workExperienceForm">
+                            <div class="form-group">
+                                <label for="title">Title *</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Ex: Software Engineer" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company *</label>
+                                <input type="text" id="company" name="company" class="form-control" placeholder="Ex: Microsoft" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <input type="text" id="locationCity" name="locationCity" class="form-control" placeholder="Ex: London">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select id="locationCountry" name="locationCountry" class="form-control">
+                                            <option value="India">India</option>
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Australia">Australia</option>
+                                            <!-- Add more countries as needed -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="currentRole">
+                                <label class="form-check-label" for="currentRole">I am currently working in this role</label>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="startDateMonth">Start Date *</label>
+                                    <div class="form-row">
+                                        <div class="col-6">
+                                            <select id="startDateMonth" name="startDateMonth" class="form-control" required>
+                                                <option value="">Month</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="number" id="startDateYear" name="startDateYear" class="form-control" placeholder="Year" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="endDateMonth">End Date *</label>
+                                    <div class="form-row">
+                                        <div class="col-6">
+                                            <select id="endDateMonth" name="endDateMonth" class="form-control" required>
+                                                <option value="">Month</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="number" id="endDateYear" name="endDateYear" class="form-control" placeholder="Year" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descriptionWork">Description</label>
+                                <textarea id="descriptionWork" name="descriptionWork" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bioWork">Bio</label>
+                                <textarea id="bioWork" name="bioWork" class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="clearWorkExperienceForm()">Cancel</button>
+                        <button type="button" class="btn btn-success" onclick="saveWorkExperience()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="./JS/workexperience.js"></script>
+
+   
+
+
+</body>
+</html>
