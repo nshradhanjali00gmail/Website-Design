@@ -1,0 +1,45 @@
+.profile-photo {
+    position: relative;
+    display: inline-block;
+}
+.profile-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.upload-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+.upload-input {
+    display: none;
+}
+.flag-icon {
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+}
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+.multi-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.multi-input-item {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 2px 8px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
+.multi-input-item .value {
+    margin-right: 5px;
+}
+.multi-input-item .remove {
+    cursor: pointer;
+}

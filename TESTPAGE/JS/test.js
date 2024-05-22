@@ -11,3 +11,4 @@ document.getElementById('submit-btn').addEventListener('click', function() {
     var resultContainer = document.getElementById('result');
     resultContainer.innerHTML = "<p class='text-success'>Code submitted successfully!</p>";
 });
+// add any other verification
