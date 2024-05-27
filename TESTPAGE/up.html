@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/mcq.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Student Test Page</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <a href="#" class="btn btn-primary btn-block mb-3">Multiple Choice Question Test</a>
+          </div>
+          <div class="col-md-6">
+            <a href="#" class="btn btn-primary btn-block mb-3">Coding Test</a>
+          </div>
+        </div>
+        <div id="mcqTest" style="display: none;">
+          <h2>Multiple Choice Question Test</h2>
+          <div id="questionContainer"></div>
+          <button id="prevBtn" class="btn btn-secondary">Previous</button>
+          <button id="skipBtn" class="btn btn-secondary">Skip</button>
+          <button id="nextBtn" class="btn btn-primary">Next</button>
+        </div>
+        <div id="codingTest" style="display: none;">
+          <h2>Coding Test</h2>
+          <textarea id="code" class="form-control" rows="10"></textarea>
+          <button id="submitCode" class="btn btn-primary mt-3">Submit</button>
+          <p id="codingError" style="color: red; display: none;">Please write some code before submitting.</p>
+        </div>
+      </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="./JS/up.js"></script>
+</body>
+</html>
