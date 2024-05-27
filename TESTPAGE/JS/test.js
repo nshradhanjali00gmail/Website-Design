@@ -12,3 +12,20 @@ document.getElementById('submit-btn').addEventListener('click', function() {
     resultContainer.innerHTML = "<p class='text-success'>Code submitted successfully!</p>";
 });
 // add any other verification
+
+$(document).ready(function(){
+    // Function to handle clicking on a question in the question list
+    $('#question-list li').click(function(){
+        // Remove 'active' class from all list items
+        $('#question-list li').removeClass('active');
+        // Add 'active' class to the clicked list item
+        $(this).addClass('active');
+        // Get the question ID from the data attribute
+        var questionId = $(this).data('question-id');
+        // Hide all answer sheets
+        $('.answer-sheet').hide();
+        // Show the answer sheet corresponding to the clicked question
+        $('#answer-sheet-' + questionId).show();
+    });
+});
+

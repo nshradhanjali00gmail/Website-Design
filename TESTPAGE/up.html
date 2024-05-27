@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./css/mcq.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATED Test</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mcq.css">
+    <style>
+        /* CSS for the question list scrollbar */
+        #question-list {
+            max-height: 500px; /* Set a maximum height for the question list */
+            overflow-y: auto; /* Enable vertical scrolling when needed */
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Student Test Page</h1>
+    <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <a href="#" class="btn btn-primary btn-block mb-3">Multiple Choice Question Test</a>
-          </div>
-          <div class="col-md-6">
-            <a href="#" class="btn btn-primary btn-block mb-3">Coding Test</a>
-          </div>
-        </div>
-        <div id="mcqTest" style="display: none;">
-          <h2>Multiple Choice Question Test</h2>
-          <div id="questionContainer"></div>
-          <button id="prevBtn" class="btn btn-secondary">Previous</button>
-          <button id="skipBtn" class="btn btn-secondary">Skip</button>
-          <button id="nextBtn" class="btn btn-primary">Next</button>
-        </div>
-        <div id="codingTest" style="display: none;">
-          <h2>Coding Test</h2>
-          <textarea id="code" class="form-control" rows="10"></textarea>
-          <button id="submitCode" class="btn btn-primary mt-3">Submit</button>
-          <p id="codingError" style="color: red; display: none;">Please write some code before submitting.</p>
-        </div>
-      </div>
+            <!-- Question Bar -->
+            <div class="col-md-3 bg-light">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Questions</h5>
+                        <ul class="list-group" id="question-list">
+                            <li class="list-group-item active" data-question-id="1">Question 1</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            <li class="list-group-item active" data-question-id="1">Question 1</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            <li class="list-group-item active" data-question-id="1">Question 1</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            
+                            <!-- Add more questions as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Answer Sheet -->
+            <div class="col-md-9">
+                <div class="container mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Coding Test</h2>
+                            <p class="card-text">Please write your code below:</p>
+                            <textarea id="code-editor" class="form-control" rows="10" placeholder="Write your code here..."></textarea>
+                            <!-- Center the button -->
+                            <div class="text-center"> <!-- Center the button horizontally -->
+                                <button id="submit-btn" class="mt-3"><span>Submit</span></button>
+                            </div>
 
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                            <div id="result" class="mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script src="./JS/up.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="./JS/test.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Function to handle clicking on a question in the question list
+            $('#question-list li').click(function(){
+                // Remove 'active' class from all list items
+                $('#question-list li').removeClass('active');
+                // Add 'active' class to the clicked list item
+                $(this).addClass('active');
+                // Get the question ID from the data attribute
+                var questionId = $(this).data('question-id');
+                // Hide all answer sheets
+                $('.answer-sheet').hide();
+                // Show the answer sheet corresponding to the clicked question
+                $('#answer-sheet-' + questionId).show();
+            });
+        });
+    </script>
 </body>
 </html>

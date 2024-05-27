@@ -7,21 +7,59 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/mcq.css">
+    <style>
+        /* CSS for the question list scrollbar */
+        #question-list {
+            max-height: 500px; /* Set a maximum height for the question list */
+            overflow-y: auto; /* Enable vertical scrolling when needed */
+        }
+    </style>
 </head>
 <body>
-    <!-- test card -->
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title text-center">Coding Test</h2>
-                <p class="card-text">Please write your code below:</p>
-                <textarea id="code-editor" class="form-control" rows="10" placeholder="Write your code here..."></textarea>
-                 <!-- Center the button -->
-                 <div class="text-center"> <!-- Center the button horizontally -->
-                    <button id="submit-btn" class="mt-3"><span>Submit</span></button>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Question Bar -->
+            <div class="col-md-3 bg-light">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Questions</h5>
+                        <ul class="list-group" id="question-list">
+                            <li class="list-group-item active" data-question-id="1">Write a python code to reverse a string without using slice method?</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            <li class="list-group-item active" data-question-id="1">Question 1</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            <li class="list-group-item active" data-question-id="1">Question 1</li>
+                            <li class="list-group-item" data-question-id="2">Question 2</li>
+                            <li class="list-group-item" data-question-id="3">Question 3</li>
+                            <li class="list-group-item" data-question-id="4">Question 4</li>
+                            
+                            <!-- Add more questions as needed -->
+                        </ul>
+                    </div>
                 </div>
-               
-                <div id="result" class="mt-3"></div>
+            </div>
+            
+            <!-- Answer Sheet -->
+            <div class="col-md-9">
+                <div class="container mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Coding Test</h2>
+                            <p class="card-text">Please write your code below:</p>
+                            <textarea id="code-editor" class="form-control" rows="10" placeholder="Write your code here..."></textarea>
+                            <!-- Center the button -->
+                            <div class="text-center"> <!-- Center the button horizontally -->
+                                <button id="submit-btn" class="mt-3"><span>Submit</span></button>
+                            </div>
+
+                            <div id="result" class="mt-3"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -31,8 +69,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="./JS/test.js">
-       
-    </script>
+    <script src="./JS/test.js"></script>
 </body>
 </html>
